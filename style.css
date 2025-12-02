@@ -1,0 +1,135 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Latar belakang terang, abu-abu muda */
+    color: #333; /* Warna teks utama gelap */
+    margin: 20px;
+}
+
+h1, h2, h3 {
+    color: #2c3e50; /* Warna judul biru gelap */
+    text-align: center;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    /* Garis pemisah dengan gradasi transparan */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+}
+
+/* --- Container Umum (Digunakan untuk Login/Register dan Halaman Utama) --- */
+.login-container, .game-selection {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #fff; /* Latar belakang kotak putih */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+
+/* --- Input dan Tombol Form --- */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* Memastikan padding tidak menambah lebar */
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #3498db; /* Tombol biru */
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9; /* Biru yang lebih gelap saat hover */
+}
+
+/* --- Styling Pilihan Game (Index.php) --- */
+.game-icons {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+}
+
+.game-icons a {
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+}
+
+.game-icon {
+    width: 100px; 
+    height: 100px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 3px solid transparent; /* Border transparan default */
+    transition: border-color 0.3s;
+}
+
+.game-icons a:hover .game-icon {
+    border-color: #e74c3c; /* Border merah saat hover */
+}
+
+.game-icons p {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* --- Styling Pilihan Nominal Top Up (buy.php) --- */
+.diamond-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.package-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: #f9f9f9;
+}
+
+.package-card:hover {
+    border-color: #3498db; /* Border biru saat hover */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Menyembunyikan radio button bawaan (gunakan label untuk klik) */
+.package-card input[type="radio"] {
+    margin-right: 15px;
+    /* Sembunyikan radio button bawaan. Gunakan class 'selected' pada parent label jika ingin indikator kustom */
+}
+
+.package-card .qty {
+    font-weight: bold;
+    flex-grow: 1; 
+}
+
+.package-card .price {
+    color: #e74c3c; /* Warna harga merah/orange */
+    font-weight: bold;
+    font-size: 1.1em;
+}
