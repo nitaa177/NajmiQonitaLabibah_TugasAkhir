@@ -1,135 +1,146 @@
-/* style.css */
-
+/* style.css - Dark Mode NitaGame Style */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9; /* Latar belakang terang, abu-abu muda */
-    color: #333; /* Warna teks utama gelap */
-    margin: 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a2e; /* Dark Purple/Navy Background */
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #16213e; /* Slightly lighter container */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(108, 92, 231, 0.4); /* Purple Glow */
+    width: 90%;
+    max-width: 800px;
+    border: 1px solid #2a2a40;
 }
 
 h1, h2, h3 {
-    color: #2c3e50; /* Warna judul biru gelap */
+    color: #fff;
     text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
-hr {
-    border: 0;
-    height: 1px;
-    /* Garis pemisah dengan gradasi transparan */
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
-}
+h1 span { color: #e94560; } /* Accent Color */
 
-/* --- Container Umum (Digunakan untuk Login/Register dan Halaman Utama) --- */
-.login-container, .game-selection {
-    max-width: 500px;
-    margin: 30px auto;
-    padding: 25px;
-    background: #fff; /* Latar belakang kotak putih */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
-}
-
-/* --- Input dan Tombol Form --- */
-input[type="text"], input[type="email"], input[type="password"] {
+/* Form Input */
+input[type="text"], input[type="email"], input[type="password"], select {
     width: 100%;
     padding: 12px;
-    margin: 8px 0 15px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box; /* Memastikan padding tidak menambah lebar */
-}
-
-label {
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
-}
-
-button {
-    background-color: #3498db; /* Tombol biru */
+    margin: 8px 0 20px 0;
+    background-color: #0f3460;
+    border: 1px solid #533483;
     color: white;
-    padding: 12px 15px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
-button:hover {
-    background-color: #2980b9; /* Biru yang lebih gelap saat hover */
-}
-
-/* --- Styling Pilihan Game (Index.php) --- */
-.game-icons {
-    display: flex;
-    justify-content: space-around;
-    padding: 15px 0;
-}
-
-.game-icons a {
-    text-decoration: none;
-    color: #333;
-    text-align: center;
-}
-
-.game-icon {
-    width: 100px; 
-    height: 100px;
-    border-radius: 15px;
-    object-fit: cover;
-    border: 3px solid transparent; /* Border transparan default */
-    transition: border-color 0.3s;
-}
-
-.game-icons a:hover .game-icon {
-    border-color: #e74c3c; /* Border merah saat hover */
-}
-
-.game-icons p {
-    margin-top: 5px;
-    font-weight: bold;
-}
-
-/* --- Styling Pilihan Nominal Top Up (buy.php) --- */
-.diamond-options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.package-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Button */
+button, .btn {
+    background: linear-gradient(45deg, #e94560, #c0392b);
+    color: white;
     padding: 15px;
-    border: 2px solid #ddd;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s;
-    background-color: #f9f9f9;
-}
-
-.package-card:hover {
-    border-color: #3498db; /* Border biru saat hover */
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
-}
-
-/* Menyembunyikan radio button bawaan (gunakan label untuk klik) */
-.package-card input[type="radio"] {
-    margin-right: 15px;
-    /* Sembunyikan radio button bawaan. Gunakan class 'selected' pada parent label jika ingin indikator kustom */
-}
-
-.package-card .qty {
+    width: 100%;
     font-weight: bold;
-    flex-grow: 1; 
+    font-size: 16px;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
 }
 
-.package-card .price {
-    color: #e74c3c; /* Warna harga merah/orange */
+button:hover, .btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(233, 69, 96, 0.5);
+}
+
+/* Grid Layout for Choices */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Choice Card */
+.card-option {
+    background-color: #1a1a2e;
+    border: 2px solid #0f3460;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.card-option:hover {
+    border-color: #533483;
+}
+
+.card-option img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Hide actual radio button */
+.card-option input[type="radio"] {
+    display: none; 
+}
+
+/* Selection Effect */
+.card-option:has(input:checked) {
+    background-color: #533483;
+    border-color: #e94560;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.price-tag {
+    display: block;
+    color: #4ecca3; /* Bright Green for Price */
     font-weight: bold;
-    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+/* Invoice/Struk Styles */
+.invoice-box {
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+.invoice-table { width: 100%; border-collapse: collapse; }
+.invoice-table td { padding: 10px; border-bottom: 1px dashed #ccc; }
+.total-row td { border-top: 2px solid #333; font-weight: bold; font-size: 1.2em; }
+.log-list { list-style-type: none; padding: 0; }
+.log-list li { color: #555; font-size: 0.9em; margin-bottom: 3px; }
+
+/* Status Boxes */
+.result-box {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.success {
+    background-color: #4ecca333;
+    border: 1px solid #4ecca3;
+    color: #4ecca3;
+}
+.error {
+    background-color: #e9456033;
+    border: 1px solid #e94560;
+    color: #e94560;
 }
