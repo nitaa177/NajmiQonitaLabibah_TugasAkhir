@@ -1,42 +1,38 @@
 <?php
-// Pastikan pengguna telah melalui proses login (simulasi)
-// Dalam aplikasi nyata, di sini akan ada pengecekan session.
-// Untuk simulasi sederhana, kita asumsikan jika file ini diakses, berarti sudah lolos.
+// PilihGame.php
+
+// MODUL 1: ARRAY Data Game
+$games = [
+    // Catatan: Ganti URL placeholder dengan path gambar lokal Anda (misal: 'ml.jpg')
+    ['code' => 'ml', 'name' => 'Mobile Legends', 'img' => 'ml.jpg'],
+    ['code' => 'ff', 'name' => 'Free Fire', 'img' => 'ff.jpg'], 
+    ['code' => 'pubg', 'name' => 'PUBG Mobile', 'img' => 'pubg.jpg'],
+];
 ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pilih Game</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="game-selection login-container">
-        <h2>Pilih Game Favorit Anda</h2>
-        <p style="text-align: center;">Klik ikon game untuk melanjutkan ke halaman pembelian.</p>
+    <div class="container">
+        <h2 style="color: #4ecca3;">WELCOME TO NITA<span>GAME</span></h2>
+        <h3 style="color: #aaa;">Pilih Game untuk Top Up</h3>
         
-        <div class="game-icons">
-            
-            <a href="buy.php?game=ff">
-                <img src="ff.jpg" alt="Free Fire" class="game-icon">
-                <p>Free Fire</p>
-            </a>
-            
-            <a href="buy.php?game=ml">
-                <img src="ml.jpg" alt="Mobile Legends" class="game-icon">
-                <p>Mobile Legends</p>
-            </a>
-            
-            <a href="buy.php?game=pubg">
-                <img src="pubg.jpg" alt="PUBG Mobile" class="game-icon">
-                <p>PUBG Mobile</p>
-            </a>
-
+        <div class="grid-container" style="margin-top: 30px;">
+            <?php foreach ($games as $game): ?>
+                <a href="buy.php?game=<?php echo $game['code']; ?>" style="text-decoration: none; color: inherit;">
+                    <div class="card-option">
+                        <img src="<?php echo $game['img']; ?>" alt="<?php echo $game['name']; ?>">
+                        <p><b><?php echo $game['name']; ?></b></p>
+                    </div>
+                </a>
+            <?php endforeach; ?>
         </div>
-        <p style="text-align: center; margin-top: 20px;"><a href="index.php">Logout / Kembali ke Login</a></p>
+        
+        <p style="text-align: center; margin-top: 30px;"><a href="index.php" style="color: #e94560;">Logout</a></p>
     </div>
-
 </body>
 </html>
