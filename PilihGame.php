@@ -1,9 +1,7 @@
 <?php
-// PilihGame.php
-
-// MODUL 1: ARRAY Data Game
+// MODUL 1: ARRAY Data Game, buat nyimpen dan susun data setiap game kode, nama, gambar dalam satu struktur data terorganisir
 $games = [
-    // Catatan: Ganti URL placeholder dengan path gambar lokal Anda (misal: 'ml.jpg')
+
     ['code' => 'ml', 'name' => 'Mobile Legends', 'img' => 'ml.jpg'],
     ['code' => 'ff', 'name' => 'Free Fire', 'img' => 'ff.jpg'], 
     ['code' => 'pubg', 'name' => 'PUBG Mobile', 'img' => 'pubg.jpg'],
@@ -14,7 +12,10 @@ $games = [
 <head>
     <meta charset="UTF-8">
     <title>Pilih Game</title>
-    <link rel="stylesheet" href="style.css">
+
+
+        <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <div class="container">
@@ -22,7 +23,12 @@ $games = [
         <h3 style="color: #aaa;">Pilih Game untuk Top Up</h3>
         
         <div class="grid-container" style="margin-top: 30px;">
-            <?php foreach ($games as $game): ?>
+
+    <?php
+
+    // modul 3: perulangan, Mengotomatisasi proses mencetak kartu game dan linknya ke halaman buy.php
+    
+                     foreach ($games as $game): ?>
                 <a href="buy.php?game=<?php echo $game['code']; ?>" style="text-decoration: none; color: inherit;">
                     <div class="card-option">
                         <img src="<?php echo $game['img']; ?>" alt="<?php echo $game['name']; ?>">
@@ -31,6 +37,7 @@ $games = [
                 </a>
             <?php endforeach; ?>
         </div>
+        
         
         <p style="text-align: center; margin-top: 30px;"><a href="index.php" style="color: #e94560;">Logout</a></p>
     </div>
